@@ -182,6 +182,13 @@
         })
         checkWidth();
         $(window).resize(checkWidth);
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 40) {
+                $('.fixed-rwd').css("padding-top", "0px");
+            } else {
+                $('.fixed-rwd').css("padding-top", "40px");
+            }
+        });
     });
     $("#nav a").on('click', function(event) {
         if (this.hash !== "") {
@@ -195,13 +202,6 @@
 
         }
 
-    });
-    $(window).scroll(function() {
-        if ($(window).scrollTop() > 40) {
-            $('.fixed-rwd').css("padding-top", "0px");
-        } else {
-            $('.fixed-rwd').css("padding-top", "40px");
-        }
     });
 </script>
 
